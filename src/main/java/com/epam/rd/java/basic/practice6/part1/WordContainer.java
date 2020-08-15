@@ -46,7 +46,9 @@ public class WordContainer {
             while (true) {
                 s = br.readLine();
                 if (s.contains("stop")) {
-                    lines.add(s.split("stop")[0]);
+                    if (!s.equals("stop")) {
+                        lines.add(s.split("stop")[0]);
+                    }
                     break;
                 }
                 lines.add(s);
