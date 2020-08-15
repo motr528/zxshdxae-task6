@@ -32,7 +32,6 @@ public class WordContainer {
                 getWordAndAddToSet(subStr);
             }
         }
-
         words = arrangeOutput(words);
 
         words.forEach(System.out::println);
@@ -47,7 +46,7 @@ public class WordContainer {
             while (true) {
                 s = br.readLine();
                 if (s.contains("stop")) {
-                    lines.add(s.split(" stop")[0]);
+                    lines.add(s.split("stop")[0]);
                     break;
                 }
                 lines.add(s);
