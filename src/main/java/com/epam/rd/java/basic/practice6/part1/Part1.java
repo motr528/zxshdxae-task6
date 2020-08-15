@@ -15,7 +15,6 @@ public class Part1 {
 		WordContainer.main(null);
 
 		System.setIn(System.in);
-		
 	}
 
 }

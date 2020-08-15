@@ -13,31 +13,25 @@ public class WordContainer {
     private static final Logger logger = Logger.getLogger(WordContainer.class.getName());
     private static final String EXCEPTION_OCCURED = "Exception: ";
 
-    private static Set<Word> words = new HashSet<>();
-
-    public Set<Word> getWords() {
-        return words;
-    }
-
-    public void setWords(Set<Word> words) {
-        this.words = words;
-    }
+    private Set<Word> words = new HashSet<>();
 
     public static void main(String[] args) {
 
-        List<String> input = getInput();
+        WordContainer wordContainer = new WordContainer();
+
+        List<String> input = wordContainer.getInput();
 
         for (String str : input) {
             for (String subStr : str.split(" ")) {
-                getWordAndAddToSet(subStr);
+                wordContainer.getWordAndAddToSet(subStr);
             }
         }
-        words = arrangeOutput(words);
+        wordContainer.words = arrangeOutput(wordContainer.words);
 
-        words.forEach(System.out::println);
+        wordContainer.words.forEach(System.out::println);
     }
 
-    public static List<String> getInput() {
+    public List<String> getInput() {
         List<String> lines = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
@@ -59,7 +53,7 @@ public class WordContainer {
         return lines.stream().filter(el -> el != null && !el.trim().isEmpty()).collect(Collectors.toList());
     }
 
-    public static void getWordAndAddToSet(String input) {
+    public void getWordAndAddToSet(String input) {
         Word word = new Word(input);
 
         boolean exists = false;
