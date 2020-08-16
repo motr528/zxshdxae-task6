@@ -39,7 +39,7 @@ public class Parking {
     private boolean goRight(int k) {
         boolean isParked = false;
 
-        for (int i = k + 1; i < places.length - 1; i++) {
+        for (int i = k + 1; i < places.length; i++) {
             if (places[i] == 0) {
                 places[i] = 1;
                 isParked = true;
